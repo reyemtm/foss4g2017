@@ -1,0 +1,65 @@
+---
+title: OVRDC GIS & RTPO Internal Wiki
+subtitle: Key projects with details, sorted by estimated project progress.
+---
+{% assign projects = site.data.projects | sort: 'progress' %}
+<!--section class="main-section version-picker" style="">
+  <div class="container">
+    <div class="version-picker-box">
+      <span class="tag">Menu</span>
+      <span class="version">
+              <div class="version-current">2.0.3 <i class="material-icons">arrow_drop_down</i></div>
+              <ul class="version-dropdown">
+                  {% for project in projects %}
+                  <li class="version-item current ">
+                      <a class="documentation-list-link" data-scroll href="#{{project.name | replace: ' ', '' }}">{{project.name}}</a>
+                  </li>
+                  {% endfor %}
+              </ul>
+          </span>
+    </div>
+  </div>
+</section-->
+<section class="main-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-tp-25 hide-pl hide-pp">
+        <ul class="documentation-list nav" id="sticky">
+          <h5 style="margin: 1rem 0;">Current Projects</h5>
+          {% for project in projects %}
+          {% if project.progress != 100 %}
+          <li class="documentation-list-item">
+            <a class="documentation-list-link" data-scroll href="#{{project.name | replace: ' ', '' }}">{{project.name}}</a>
+          </li>
+          {% endif %}
+          {% endfor %}
+          <h5>Completed Projects</h5>
+          {% for project in projects %}
+          {% if project.progress == 100 %}
+          <li class="documentation-list-item">
+            <a class="documentation-list-link" data-scroll href="#{{project.name | replace: ' ', '' }}">{{project.name}}</a>
+          </li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-tp-75">
+        <h2>Current Projects</h2>
+        {% for project in projects %}
+        {% if project.progress != 100 %}
+        {% include loop-projects.html %}
+        {% endif %}
+        {% if project.progress == 100 %}
+        {% include loop-projects.html %}
+        {% endif %}
+        {% endfor %}
+        <div class="spacer"> </div>
+        <div class="spacer"> </div>
+        <div class="spacer"> </div>
+        <div class="spacer"> </div>
+        <div class="spacer"> </div>
+        <div class="spacer"> </div>
+      </div>
+    </div>
+  </div>
+</section>
