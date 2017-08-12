@@ -1,56 +1,39 @@
 ---
-title: OVRDC GIS & RTPO Internal Wiki
-subtitle: Key projects with details, sorted by estimated project progress.
+title: FOSS4G 2017
+subtitle: Brief Notes and Featured Talks
 ---
-{% assign projects = site.data.projects | sort: 'progress' %}
-<!--section class="main-section version-picker" style="">
-  <div class="container">
-    <div class="version-picker-box">
-      <span class="tag">Menu</span>
-      <span class="version">
-              <div class="version-current">2.0.3 <i class="material-icons">arrow_drop_down</i></div>
-              <ul class="version-dropdown">
-                  {% for project in projects %}
-                  <li class="version-item current ">
-                      <a class="documentation-list-link" data-scroll href="#{{project.name | replace: ' ', '' }}">{{project.name}}</a>
-                  </li>
-                  {% endfor %}
-              </ul>
-          </span>
-    </div>
-  </div>
-</section-->
+{% assign talks = site.data.talks | sort: 'name' %}
 <section class="main-section">
   <div class="container">
     <div class="row">
       <div class="col-tp-25 hide-pl hide-pp">
         <ul class="documentation-list nav" id="sticky">
-          <h5 style="margin: 1rem 0;">Current Projects</h5>
-          {% for project in projects %}
-          {% if project.progress != 100 %}
+          <h5 style="margin: 1rem 0;">Featured talks</h5>
+          {% for talk in talks %}
+          {% if talk.featured == true %}
           <li class="documentation-list-item">
-            <a class="documentation-list-link" data-scroll href="#{{project.name | replace: ' ', '' }}">{{project.name}}</a>
+            <a class="documentation-list-link" data-scroll href="#{{talk.name | replace: ' ', '' }}">{{talk.name}}</a>
           </li>
           {% endif %}
           {% endfor %}
-          <h5>Completed Projects</h5>
-          {% for project in projects %}
-          {% if project.progress == 100 %}
+          <h5>Other Talks</h5>
+          {% for talk in talks %}
+          {% if talk.featured != true %}
           <li class="documentation-list-item">
-            <a class="documentation-list-link" data-scroll href="#{{project.name | replace: ' ', '' }}">{{project.name}}</a>
+            <a class="documentation-list-link" data-scroll href="#{{talk.name | replace: ' ', '' }}">{{talk.name}}</a>
           </li>
           {% endif %}
           {% endfor %}
         </ul>
       </div>
       <div class="col-tp-75">
-        <h2>Current Projects</h2>
-        {% for project in projects %}
-        {% if project.progress != 100 %}
-        {% include loop-projects.html %}
+        <h2>Featured talks</h2>
+        {% for talk in talks %}
+        {% if talk.featured == true %}
+        {% include loop.html %}
         {% endif %}
-        {% if project.progress == 100 %}
-        {% include loop-projects.html %}
+        {% if talk.featured != true %}
+        {% include loop.html %}
         {% endif %}
         {% endfor %}
         <div class="spacer"> </div>

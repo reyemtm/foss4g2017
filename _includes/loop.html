@@ -1,0 +1,19 @@
+<div id="{{talk.name | replace: ' ', '' }}" class="documentation-section">
+  <h3 style="color:#c53500;">{{talk.name}}</h3>
+  <p>{{talk.details | markdownify}}</p>
+  <p>
+  {% for item in talk.tags %}
+    <code>{{item}}</code>
+  {% endfor %}
+  </p>
+  {% if talk.tasks %}
+  <h4>Task List</h4>
+  <ul style="list-style:none;">
+    {% for task in talk.tasks %}
+    <li><i class="fa fa-square-o"></i>&nbsp;{{task.name}}</li>
+    {% endfor%}
+  </ul>
+  {% endif %}
+  {% if talk.url %}<a class="button button-outlined" href="{{talk.url}}" target="_blank">More Info</a>{% endif %}
+</div>
+<div class="spacer"> </div>

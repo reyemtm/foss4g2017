@@ -1,0 +1,9 @@
+- name: Mapbox GL
+  speaker: Vlad
+  featured: false
+  tags: tag1 tag2 tag3
+
+- name: Talk 2
+  speaker: Vlad
+  featured: true
+  tags: tag1 tag2 tag3
