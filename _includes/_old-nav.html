@@ -1,0 +1,13 @@
+{% assign talks = {{page.notes}} | sort: 'name' %}
+<li class="header-nav-item mobile-only"><strong style="text-decoration:underline;">Featured Talks</strong></li>
+{% for talk in talks %}
+{% if talk.featured == true %}
+<li class="header-nav-item mobile-only"><a class="header-nav-link" data-scroll href="#{{talk.name | replace: ' ', '' }}">{{talk.name}}</a></li>
+{% endif %}
+{% endfor %}
+<li class="header-nav-item mobile-only"><strong style="text-decoration:underline;">Other Talks</strong></li>
+{% for talk in talks %}
+{% if talk.featured != true %}
+<li class="header-nav-item mobile-only"><a class="header-nav-link" data-scroll href="#{{talk.name | replace: ' ', '' }}">{{talk.name}}</a></li>
+{% endif %}
+{% endfor %}

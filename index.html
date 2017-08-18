@@ -1,40 +1,21 @@
 ---
-title: FOSS4G 2017
-subtitle: Brief Notes and Featured Talks
+title: ""
+subtitle: ""
+css: >-
+  .hero-section .hero-text {
+    color: white;
+  }
+  .hero-section .hero-tag {
+    color: white;
+  }
 ---
-{% assign talks = site.data.talks | sort: 'name' %}
 <section class="main-section">
   <div class="container">
     <div class="row">
-      <div class="col-tp-25 hide-pl hide-pp">
-        <ul class="documentation-list nav" id="sticky">
-          <h5 style="margin: 1rem 0;">Featured talks</h5>
-          {% for talk in talks %}
-          {% if talk.featured == true %}
-          <li class="documentation-list-item">
-            <a class="documentation-list-link" data-scroll href="#{{talk.name | replace: ' ', '' }}">{{talk.name}}</a>
-          </li>
-          {% endif %}
-          {% endfor %}
-          <h5>Other Talks</h5>
-          {% for talk in talks %}
-          {% if talk.featured != true %}
-          <li class="documentation-list-item">
-            <a class="documentation-list-link" data-scroll href="#{{talk.name | replace: ' ', '' }}">{{talk.name}}</a>
-          </li>
-          {% endif %}
-          {% endfor %}
-        </ul>
-      </div>
       <div class="col-tp-75">
-        <h2>Featured talks</h2>
-        {% for talk in talks %}
-        {% if talk.featured == true %}
-        {% include loop.html %}
-        {% endif %}
-        {% if talk.featured != true %}
-        {% include loop.html %}
-        {% endif %}
+        {% for note in site.notes %}
+        <h2><a href="{{note.url}}">{{note.title}}</a></h2>
+        <p>{{note.subtitle}}</p>
         {% endfor %}
         <div class="spacer"> </div>
         <div class="spacer"> </div>

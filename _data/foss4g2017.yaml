@@ -1,0 +1,45 @@
+- name: TurfJS
+  tags: turf
+  details: >-
+    - 
+    -
+  url: http://geosys.net
+
+- name: OpenDroneMap
+  speaker: Steve mather
+  details: >-
+    * Georef exif gps from images via drone flight software
+
+    * E384 (300ac), eBee (75ac), Iris+ (5ac), Kite, Helikite
+
+    * powershow S100 (GPS & IR)
+
+    - Silent Falcon (Solar, 3-5hrs, fixed wing)
+
+    - Need to calibrate images before importing to ODM to handle radial distortion from the drone camera
+
+    - Currently swiching from AgiSoft
+
+    - Mission Planner, Tower App
+
+    - use Advanced "Cross Grid" options helps with oblique angles, getting all sides of the objects 7 to 15 deg angle on camera
+
+    - Digital Ocean WebODM 4 Cores, 4-16gb RAM
+
+    - ```docker run -it --rm -v $(pwd):/code/images -v $(pwd)/odm_georeferencing:/code/odm_georeferencing /code/odm_texturing /code/odm_orthophoto ```
+  featured: true
+  tas: ["odm", "virtual box", "linux"]
+
+- name: Slippy Web Maps (mbtiles-server)
+  speaker: Joey Lee
+  featured: true
+  github: "@joeyklee"
+  tags: ["nodejs", "mbtiles", "vector-tiles"]
+  details: >-
+    - GraphHopper routing engine
+    -
+
+- name: Mapbox GL
+  speaker: Vlad
+  featured: false
+  tags: tag1 tag2 tag3

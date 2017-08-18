@@ -1,0 +1,59 @@
+---
+title: FOSS4G 2017
+notes: site.data.talks
+subtitle: Brief Notes and Featured Talks
+css: >-
+  .hero-section .hero-text {
+    color: white;
+  }
+  .hero-section .hero-tag {
+    color: white;
+  }
+---
+{% assign talks = site.data.foss4g2017 | sort: 'name' %}
+<section class="main-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-tp-25 hide-pl hide-pp">
+        <ul class="documentation-list nav" id="sticky">
+          <h5 style="margin: 1rem 0;">Featured talks</h5>
+          {% for talk in talks %}
+          {% if talk.featured == true %}
+          <li class="documentation-list-item">
+            <a class="documentation-list-link" data-scroll href="#{{talk.name | replace: ' ', '' }}">{{talk.name}}</a>
+          </li>
+          {% endif %}
+          {% endfor %}
+          <h5>Other Talks</h5>
+          {% for talk in talks %}
+          {% if talk.featured != true %}
+          <li class="documentation-list-item">
+            <a class="documentation-list-link" data-scroll href="#{{talk.name | replace: ' ', '' }}">{{talk.name}}</a>
+          </li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-tp-75">
+        <h2>Featured Talks</h2>
+        {% for talk in talks %}
+        {% if talk.featured == true %}
+        {% include loop.html %}
+        {% endif %}
+        {% endfor %}
+        <h2>Other Talks</h2>
+        {% for talk in talks %}
+        {% if talk.featured != true %}
+        {% include loop.html %}
+        {% endif %}
+        {% endfor %}
+        <div class="spacer"> </div>
+        <div class="spacer"> </div>
+        <div class="spacer"> </div>
+        <div class="spacer"> </div>
+        <div class="spacer"> </div>
+        <div class="spacer"> </div>
+      </div>
+    </div>
+  </div>
+</section>

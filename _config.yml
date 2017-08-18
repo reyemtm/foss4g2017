@@ -16,10 +16,10 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: FOSS4G 2017
+title: Wiki
 #email: your-email@domain.com
 description: >-
-  These are my own personal notes from the International FOSS4G Conference in Boston, August 2017.
+  These are my own personal notes from GIS conferences, various talks and other random thoughts.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: getbounds
@@ -35,14 +35,21 @@ exclude:
   - Gemfile.lock
 
 permalink: /:title/
+collections:
+  notes:
+    output: true
+
 defaults:
-  -
-    scope:
+  - scope:
       path: "" # an empty string here means all files in the project
       type: "pages" # previously `post` in Jekyll 2.2.
     values:
       layout: "main"
-
+  - scope:
+      path: "_notes"
+      type: notes
+    values:
+      layout: main
 #css styles lazy sass
 font-color--secondary: "black" #original #737373
 font-color--main: "#333"
@@ -51,4 +58,4 @@ font-color--highlight: "#c53500"
 font-color--highlight2: "#c53500" #0080ff
 font-color--highlight2-button: "#c53500 " #0066cc
 font-color--highlight2-button-active: "#9a2900 " #0061c2
-header-img: header2.png
+header-img: header3.jpg

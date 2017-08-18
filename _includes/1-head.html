@@ -48,4 +48,9 @@
     font-family: "Cabin", sans-serif;
   }
   </style>
+  {% if page.css %}
+  <style>
+  {{page.css}}
+  </style>
+  {% endif %}
 </head>
