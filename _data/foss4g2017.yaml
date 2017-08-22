@@ -1,7 +1,45 @@
+- name: Misc
+  details: >-
+    - [Noise Search](https://noisesearch.org)
+
+    - GraphQL
+
+    - r2iDashboard Penn State
+
+    - Geographic Weighted Regression (in GeoDa) and Network Kernel Density for crash mapping along road sections, also Ord GI statistics
+
+    - Vision Zero Bostom
+
+    - Leaflet.VectorTiles by NBT Solutions should be on github
+
+    - Chapter 55 Story Map MASS opiate Maps
+
+    - Superset Google Analytics Dashboard running on Apache
+
+    - Pixie Dust in Jupyter Notebook (python)
+
+    - Mapzen SVG Exporter and 3D Printer Exporter
+
+    - Descartes labs on the fly raster search
+
+    - GeoTif.io Browser based raster Search
+
+    - geojson2mvt convert geojson to static (.pbf) vecvtor tiles
+
+    -  LERC Esri Image Interaction??
+
+    - Rbush in OpenLayers queries
+
+    - Tile Reduce, Which Polygon, line-compare, supercluster, cheap ruler, geobuf
+
+    - Editing Topology in Open Layers examples
+
+    - 
+
 - name: TurfJS
   tags: turf
   details: >-
-    - 
+    -
     -
   url: http://geosys.net
 
